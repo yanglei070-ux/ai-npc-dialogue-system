@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment
+.env
+.env.local
+
+# Runtime data
+data/settings.json
+data/*.lock
+*.sqlite
+server.log
+server.err.log
+server.out.log
+logs/
+npcs/*/memory.json
+npcs/*/affinity.json
+npcs/*/session.json
+
+# Tests
+.pytest_cache/
+htmlcov/
+.coverage
+
+# Temporary files
+*.tmp
+*.bak
+
+# Encryption key
+data/.encryption_key

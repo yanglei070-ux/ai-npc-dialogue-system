@@ -1,0 +1,73 @@
+# ============================================================
+# 星辰学院 - AI NPC 对话系统 配置文件
+# ============================================================
+
+llm:
+  # 支持任何 OpenAI 兼容 API（OpenAI / Ollama / vLLM / LM Studio 等）
+  # 通过环境变量覆盖:
+  #   OPENAI_API_KEY   - API 密钥
+  #   OPENAI_BASE_URL  - API 地址
+
+  provider: "openai"           # openai | ollama | mock
+  model: "gpt-4o-mini"         # 模型名称
+  base_url: "https://api.openai.com/v1"
+  api_key: ""                  # 留空则从环境变量 OPENAI_API_KEY 读取
+  temperature: 0.85
+  max_tokens: 512
+
+  # Ollama 本地模型配置（provider 设为 ollama 时生效）
+  ollama:
+    base_url: "http://localhost:11434/v1"
+    model: "qwen2.5:7b"
+
+  # Mock 模式（无需 API，用于测试 UI）
+  mock:
+    enabled: true
+
+game:
+  max_memory_turns: 10         # 保留最近 N 轮对话
+  max_fact_count: 20           # 每个 NPC 最多记住多少条事实
+  affinity:
+    initial: 50                # 初始好感度
+    min: 0
+    max: 100
+    # 好感度等级阈值
+    tiers:
+      hostile:  [0,  20]       # 敌对
+      cold:     [21, 40]       # 冷淡
+      neutral:  [41, 60]       # 中立
+      warm:     [61, 80]       # 友好
+      bonded:   [81, 100]      # 羁绊
+
+npcs:
+  eileen:
+    id: "eileen"
+    name: "艾琳教授"
+    full_name: "魔药课教授 · 艾琳·暮光"
+    title: "魔药课教授"
+    avatar: "🧪"
+    description: "严厉的魔药课教授，前冒险者，左眼有伤疤。"
+    dir: "eileen"
+  toms:
+    id: "toms"
+    name: "老汤姆"
+    full_name: "图书馆管理员 · 汤姆·书影"
+    title: "图书馆管理员"
+    avatar: "📚"
+    description: "温和话多的图书馆管理员，在学院工作 40 年。"
+    dir: "toms"
+  shadow:
+    id: "shadow"
+    name: "影"
+    full_name: "神秘学生 · 影"
+    title: "神秘学生"
+    avatar: "🌙"
+    description: "冷漠寡言的神秘学生，总在深夜出现在禁书区。"
+    dir: "shadow"
+
+server:
+  host: "127.0.0.1"
+  port: 5001
+  debug: true
+  log_level: "INFO"
+  rate_limit_per_minute: 30
