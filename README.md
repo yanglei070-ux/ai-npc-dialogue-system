@@ -98,8 +98,6 @@ docker run -p 5001:5001 -e OPENAI_API_KEY=your-key star-academy-npc
 
 ## 游戏截图
 
-> 截图将在首次运行后补充。
-
 | 主界面 | 与艾琳教授对话 | 好感度系统 |
 |:---:|:---:|:---:|
 | ![主界面](screenshots/main-ui.png) | ![对话](screenshots/chat-eileen.png) | ![好感度](screenshots/affinity.png) |
